@@ -33,7 +33,7 @@ MPU6050 uporabljam v načinu, ki izkorišča DMP enoto, zato je poleg I2C poveza
 
 ## Delovanje Flex senzorja
 
-Flex senzor je preko delilnika napetosti povezan na analogno nožico Arduina. Flex senzor v delilniku napetosti opravlja vlogo variabilnega upora R1, vrednost fiksnega upora R2 pa sem izbral tako, da delilnik napetosti proizvede največjo, še berljivo, razliko v napetosti glede na stanje variabilnega upora R1. Prebrana vrednost se preko ADC pretvornika pretvori v diskretno vrednost, ki se potem z pomočjo funkcije map(), preslika na interval med 1000 in 2000 (min. in max. vrednost servo kanalov). Za kalibracijo senzorja sem najprej moral poiskati max. in min. vrednost, ki jih senzor lahko prebere ko je fiksiran na rokavici.
+Flex senzor je preko delilnika napetosti povezan na analogno nožico Arduina. Flex senzor v delilniku napetosti opravlja vlogo variabilnega upora R1, vrednost fiksnega upora R2 pa sem izbral tako, da delilnik napetosti proizvede največjo, še berljivo, razliko v napetosti glede na stanje variabilnega upora R1. Prebrana vrednost se preko ADC pretvornika pretvori v diskretno vrednost, ki se potem z pomočjo funkcije map(), preslika na interval med 1000 in 2000 (min. in max. vrednost servo kanalov). Za kalibracijo senzorja sem najprej moral poiskati max. in min. vrednost, ki jih senzor lahko prebere ko je fiksiran na rokavici. Ker je senzor zelo občutljiv sem uprabil, sem uporabil gladilno funkcijo, ki vzame povprečje zadnjih n meritev. Z testiranjem sem prišel do zaključka da je n=10 dober kompromis med odzivnostjo in stabilnostjo.
 
 <p align="center">
  <img src="./img/flex.png" height=300>
@@ -42,7 +42,7 @@ Flex senzor je preko delilnika napetosti povezan na analogno nožico Arduina. Fl
 
 ## Delovanje OLED zaslona (SSD1306)
 
-Zalon je na Arduino povezan preko istega I2C vodila kot MPU6050. Na zaslonu so prikazane vrednosti vseh štirih kanalov v obliki "stick position". Za upravljanje zaslona sem uporabil knjižnici Adafruit SSD1306 in Adafruit GFX Library.
+Zalon je na Arduino povezan preko istega I2C vodila kot MPU6050. Na zaslonu so prikazane vrednosti vseh štirih kanalov v obliki "stick position". Za upravljanje zaslona sem uporabil knjižnici Adafruit SSD1306 in Adafruit GFX Library. Zaslon se osveži vsakih 100ms, za tako hitrost osveževanja sem se odločil zato ker je dober kompromis med "tekočim" delovanjem zaslona in obremenitvijo I2C vodila.
 
 <p align="center">
  <img src="./img/oled.png" align="center" height=300>

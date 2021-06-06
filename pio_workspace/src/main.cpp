@@ -234,14 +234,14 @@ void loop()
 
     static long timer_display = millis();
     if ((long)(millis() - timer_display) >= 100)
-    { //<<< 100 milliseconds is skipping about 10 MPU6050 data samples.
+    {
         timer_display = millis();
         drawRollPitchYawThrottle(ppm[ROLL_CHANNEL], ppm[PITCH_CHANNEL], ppm[YAW_CHANNEL], ppm[THROTTLE_CHANNEL]);
     }
 
     static long timer_serial = millis();
     if ((long)(millis() - timer_serial) >= 1000)
-    { //<<< 100 milliseconds is skipping about 10 MPU6050 data samples.
+    {
         timer_serial = millis();
         printChannels();
     }
