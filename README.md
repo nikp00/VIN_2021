@@ -4,6 +4,20 @@ Avtor: Nik Prinčič
 
 Mentor: viš. pred. dr. Robert Rozman
 
+### Table of Contents
+
+[Ideja delovanja](#ideja_delovanja)  
+[Razvojno okolje](#razvojno_okolje)  
+[Delovanje MPU6050](#emphasis)  
+[Delovanje Flex senzorja](#emphasis)  
+[Delovanje OLED zaslona (SSD1306)](#emphasis)  
+[Generiranje PPM/CPPM signala](#emphasis)  
+[Vezalna shema](#emphasis)  
+[Problemi na katere sem naletel](#emphasis)  
+[Zaključek](#emphasis)
+
+## Headers
+
 ## Ideja delovanja
 
 Nadziranje FPV drona z nagibanjem roke (roll, pitch, yaw) ter stiskanjem pesti (throttle). Za zaznavanje nagiba roke sem uporabil MPU6050 (6 DoF IMU), ki ima vgrajen DMP (digital motion processing) enoto, ki prepreči, da bi vrednosti, ki ju izmerita pospeškomer in žiroskop skozi čas začele odstopati zaradi pojava imenovanega "sensor drift". Za nadzor plina (throttle) pa sem uporabil flex senzor v kombinaciji z delilnikom napetosti. Flex senzor v delilniku napetosti opravlja nalogo variabilnega upora R1 (razpon upornosti od 30K do 110K), za upor R2 pa sem izbral upornost 68K. Za vizualizacijo pozicije vsakega od 4 kanalov (stick position) pa sem uporabil OLED zaslon. Vse skupaj pa nadzira Arduino Nano, ki tudi generira CPPM signal ki ga potem preko 3,5mm konektorja pošilja v oddajnik, ki komunicira z dronom.
