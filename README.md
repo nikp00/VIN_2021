@@ -4,17 +4,17 @@ Avtor: Nik Prinčič
 
 Mentor: viš. pred. dr. Robert Rozman
 
-### Table of Contents
+### Kazalo
 
-[Ideja delovanja](#ideja_delovanja)  
-[Razvojno okolje](#razvojno_okolje)  
-[Delovanje MPU6050](#emphasis)  
-[Delovanje Flex senzorja](#emphasis)  
-[Delovanje OLED zaslona (SSD1306)](#emphasis)  
-[Generiranje PPM/CPPM signala](#emphasis)  
-[Vezalna shema](#emphasis)  
-[Problemi na katere sem naletel](#emphasis)  
-[Zaključek](#emphasis)
+-   [Ideja delovanja](#ideja-delovanja)
+-   [Razvojno okolje](#razvojno-okolje)
+-   [Delovanje MPU6050](#delovanje-mpu6050)
+-   [Delovanje Flex senzorja](#delovanje-flex-senzorja)
+-   [Delovanje OLED zaslona (SSD1306)](#delovanje-oled-zaslona--ssd1306-)
+-   [Generiranje PPM/CPPM signala](#generiranje-ppm-cppm-signala)
+-   [Vezalna shema](#vezalna-shema)
+-   [Problemi na katere sem naletel](#problemi-na-katere-sem-naletel)
+-   [Zaključek](#zaklju-ek)
 
 ## Headers
 
