@@ -11,8 +11,8 @@ Nadziranje FPV drona z nagibanjem roke (roll, pitch, yaw) ter stiskanjem pesti (
 Da bi vse navedene komponete lahko montiral na roko sem s pomočjo programa za 3D modeliranje in 3D tiskalnika izdelal nekaj nosilcev. Vsi nosilci so izdelani z delno fleksibilnega materiala TPU, da sel lažje prilagodijo obl. Za napajanje pa sem uporabil 18650 Li-Ion celico, ki je preko BMS modula povezana na DC-DC boost module, ki napetost dvigne na 5V.
 
 <p align="center">
- <img src="./img/20210605_154630.jpg" align="center" >
-  <img src="./img/supports.png" align="center" >
+ <img src="./img/20210605_154630.jpg" align="center" height=300 >
+  <img src="./img/supports.png" align="center" height=300>
 </p>
 
 ## Razvojno okolje
@@ -28,7 +28,7 @@ Za razvojno okolje sem si izbral [Platform IO](https://platformio.org/), ki delu
 MPU6050 uporabljam v načinu, ki izkorišča DMP enoto, zato je poleg I2C povezave potrebna še povezava na prekinitveno nožico Arduina. Ko DMP enota sprocesira pordatke sproži prekinitev, ki Arduino opozori da so podatki pripravljeni za branje. Za interkcijo z MPU6050 sem uporabil knjižnico [Simple_MPU6050](https://github.com/ZHomeSlice/Simple_MPU6050), ki v DMP enoto naloži potrben program (Invensense Embedded MotionDriver 6.12) in olajša vso ostalo konfiguracijo in komunikacijo.
 
 <p align="center">
- <img src="./img/mpu6050.png" align="center" >
+ <img src="./img/mpu6050.png" align="center" height=300>
 </p>
 
 ## Delovanje Flex senzorja
@@ -36,8 +36,8 @@ MPU6050 uporabljam v načinu, ki izkorišča DMP enoto, zato je poleg I2C poveza
 Flex senzor je preko delilnika napetosti povezan na analogno nožico Arduina. Flex senzor v delilniku napetosti opravlja vlogo variabilnega upora R1, vrednost fiksnega upora R2 pa sem izbral tako, da delilnik napetosti proizvede največjo, še berljivo, razliko v napetosti glede na stanje variabilnega upora R1. Prebrana vrednost se preko ADC pretvornika pretvori v diskretno vrednost, ki se potem z pomočjo funkcije map(), preslika na interval med 1000 in 2000 (min. in max. vrednost servo kanalov). Za kalibracijo senzorja sem najprej moral poiskati max. in min. vrednost, ki jih senzor lahko prebere ko je fiksiran na rokavici.
 
 <p align="center">
- <img src="./img/flex.png" >
- <img src="./img/voltage_divider.png">
+ <img src="./img/flex.png" height=300>
+ <img src="./img/voltage_divider.png" height=300>
 </p>
 
 ## Delovanje OLED zaslona (SSD1306)
@@ -45,7 +45,7 @@ Flex senzor je preko delilnika napetosti povezan na analogno nožico Arduina. Fl
 Zalon je na Arduino povezan preko istega I2C vodila kot MPU6050. Na zaslonu so prikazane vrednosti vseh štirih kanalov v obliki "stick position". Za upravljanje zaslona sem uporabil knjižnici Adafruit SSD1306 in Adafruit GFX Library.
 
 <p align="center">
- <img src="./img/oled.png" align="center" >
+ <img src="./img/oled.png" align="center" height=300>
 </p>
 
 ## Generiranje PPM/CPPM signala
@@ -99,3 +99,5 @@ fun tim_interupt():
 ## Zaključek
 
 idejo za projekt sem imel že nekaj časa, a si nikoli nisem vezl časa, da bi ga realiziral, zato sem izkoristil priložnost in ga realiziral v sklopu predmeta VIN. Med izdelavo sem se naučil kar nekaj novih stvari, na katere med samim načrtovanjem nisem niti preveč pomislil. Končni izdelek je dejansko lahko uporaben za pilotiranje FPV drona, a je sprva občutek zelo čuden, s časom pa pa postane malo bolj podoben občutku pilotiranja z klasičnima joystickoma.
+
+Posnetek delovanja: https://www.youtube.com/watch?v=oFNRZHOGsho
