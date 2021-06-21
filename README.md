@@ -22,7 +22,7 @@ Mentor: viš. pred. dr. Robert Rozman
 
 Nadziranje FPV drona z nagibanjem roke (roll, pitch, yaw) ter stiskanjem pesti (throttle). Za zaznavanje nagiba roke sem uporabil MPU6050 (6 DoF IMU), ki ima vgrajen DMP (digital motion processing) enoto, ki prepreči, da bi vrednosti, ki ju izmerita pospeškomer in žiroskop skozi čas začele odstopati zaradi pojava imenovanega "sensor drift". Za nadzor plina (throttle) pa sem uporabil flex senzor v kombinaciji z delilnikom napetosti. Flex senzor v delilniku napetosti opravlja nalogo variabilnega upora R1 (razpon upornosti od 30K do 110K), za upor R2 pa sem izbral upornost 68K. Za vizualizacijo pozicije vsakega od 4 kanalov (stick position) pa sem uporabil OLED zaslon. Vse skupaj pa nadzira Arduino Nano, ki tudi generira CPPM signal ki ga potem preko 3,5mm konektorja pošilja v oddajnik, ki komunicira z dronom.
 
-Da bi vse navedene komponete lahko montiral na roko sem s pomočjo programa za 3D modeliranje in 3D tiskalnika izdelal nekaj nosilcev. Vsi nosilci so izdelani z delno fleksibilnega materiala TPU, da sel lažje prilagodijo obl. Za napajanje pa sem uporabil 18650 Li-Ion celico, ki je preko BMS modula povezana na DC-DC boost module, ki napetost dvigne na 5V.
+Da bi vse navedene komponete lahko montiral na roko sem s pomočjo programa za 3D modeliranje in 3D tiskalnika izdelal nekaj nosilcev. Vsi nosilci so izdelani z delno fleksibilnega materiala TPU, da sel lažje prilagodijo obliki roke. Za napajanje pa sem uporabil 18650 Li-Ion celico, ki je preko BMS modula povezana na DC-DC boost module, ki napetost dvigne na 5V.
 
 <p align="center">
  <img src="./img/20210605_154630.jpg" align="center" height=300 >
@@ -112,6 +112,6 @@ fun tim_interupt():
 
 ## Zaključek
 
-idejo za projekt sem imel že nekaj časa, a si nikoli nisem vezl časa, da bi ga realiziral, zato sem izkoristil priložnost in ga realiziral v sklopu predmeta VIN. Med izdelavo sem se naučil kar nekaj novih stvari, na katere med samim načrtovanjem nisem niti preveč pomislil. Končni izdelek je dejansko lahko uporaben za pilotiranje FPV drona, a je sprva občutek zelo čuden, s časom pa pa postane malo bolj podoben občutku pilotiranja z klasičnima joystickoma.
+Idejo za projekt sem imel že nekaj časa, a si nikoli nisem vezl časa, da bi ga realiziral, zato sem izkoristil priložnost in ga realiziral v sklopu predmeta VIN. Med izdelavo sem se naučil kar nekaj novih stvari, na katere med samim načrtovanjem nisem niti preveč pomislil. Končni izdelek je dejansko lahko uporaben za pilotiranje FPV drona, a je sprva občutek zelo čuden, s časom pa pa postane malo bolj podoben občutku pilotiranja z klasičnima joystickoma.
 
 Posnetek delovanja: https://www.youtube.com/watch?v=oFNRZHOGsho
